@@ -17,10 +17,11 @@
 #define E 2
 using namespace std;
 
-//command line to compile g++ MazePathFindermain.cpp -o main.exe
+//old command line to compile g++ MazePathFindermain.cpp -o main.exe
 //to compile sfml on cmd - g++ MazePathFindermain.cpp -lsfml-graphics -lsfml-window -lsfml-system
+//to execute: a.exe
 
-//#include <graphics.h> 
+
 typedef pair<int,int> Pair;
 typedef pair<int, pair<int, int>> pPair; 
 
@@ -48,7 +49,7 @@ void refreshGrid(int grid[][COLUMN], int state [][COLUMN]){
           
         }
     }
-    //NO NEED FOR -> anymore //********************may need to update later to accommodate start and end nodes (coloured green and red)
+    
 }
 
 //helper function to help check the validity of travelling to a node
@@ -112,8 +113,7 @@ vector<Pair> getPath(node nodeDetails[][COLUMN], Pair dest){
     while(!path.empty()){
         Pair p = path.top();
         path.pop();
-        //added to modify state to show this node is on the final path -> the state 2d array will be used to draw the board;
-        //state[p.first][p.second] = 9;
+        
         finalPath.push_back(p);
         printf("-> (%d,%d) ",p.first,p.second); 
     }
@@ -187,12 +187,12 @@ oList.insert(make_pair (0, make_pair (i, j)));
 //initially, boolean value is false as destination is not reached
 bool arrived = false;
 
-//!arrived
+
 
 
 while(!arrived && !oList.empty()){
      if (event.type == sf::Event::MouseButtonPressed){
-           // printf("A");
+           
             if (event.mouseButton.button == sf::Mouse::Left)
             {
                 //tries to ignore the mouse if it is pressed during execution of the search algorithm (to avoid crashing the program)
@@ -206,7 +206,7 @@ while(!arrived && !oList.empty()){
     //pop the first node from open list
     oList.erase(oList.begin());
 
-    //add thi node to the closed list
+    //add this node to the closed list
     i = p.second.first;
     j = p.second.second;
 
@@ -581,12 +581,12 @@ window.display();
 }//end of while loop
 
 
-//vector<Pair> path;
+
 if(arrived == true){
     int len = path.size();
     for(int i = 0; i < len; i++){
         if (event.type == sf::Event::MouseButtonPressed){
-           // printf("A");
+           
             if (event.mouseButton.button == sf::Mouse::Left)
             {
                 printf("mouse pressed!");
@@ -628,8 +628,7 @@ int chooseOrientation(int width, int height){
 }
 //recursive division algorithm
 void mazeGenerator(sf::RenderWindow& window, Pair src, Pair des, int grid [][COLUMN], int state [][COLUMN], int mx, int my, int w, int h, int orientation ){
-   // int dx = ax-mx;
-    //int dy = ay-my;
+   
     if(w < 3 || h <3){
         return;
     }
@@ -648,8 +647,7 @@ void mazeGenerator(sf::RenderWindow& window, Pair src, Pair des, int grid [][COL
         if(wx != px || wy != py) {
            grid[wx][wy] |= dir;
           state[wx][wy] |= dir;
-           //grid[wx][wy] = 0;
-           //state[wx][wy] = 0;
+          
            g.drawGrid(window, state, src, des);
            window.display();
             
@@ -677,15 +675,14 @@ void mazeGenerator(sf::RenderWindow& window, Pair src, Pair des, int grid [][COL
 
 int main(){
 
-    //cout<<"Un Sospiro"<<endl;
-    //printf("Un Sospiro \nLiebestraum No.3");
+    
     Pair src = std::make_pair(0,0);
     Pair dest = std::make_pair(49,49);
     refreshGrid(grid, state);
 
     //boolean to prevent the program from executing the A star search again right after it just finished it
      bool isDone = false;
-    // bool isSearching = false;
+    
     bool isDoneMazeBuilding = false;
 
     sf::Event event;
@@ -704,27 +701,27 @@ int main(){
         src = newSrc;
         dest = newDest;
         g.drawGrid(window, state, src, dest);
-        //if(isSearching == false){
-             g.makeBlocks(event, state, grid);
-        //}
+        
+        g.makeBlocks(event, state, grid);
+       
        
        
         if(event.type == sf::Event::KeyReleased){
           
             if (event.key.code == sf::Keyboard::Return)
                 {
-                   // printf("Pressed");
+                 
                     if(isDone == false){
-                        //isSearching = true;
+                        
                         printf("Calling A star");
                         vector<Pair> myPath = aStar(event,grid, src, dest);
                         printf("%d\n",myPath.size()-1);  
                         isDone = true;
-                       //isDoneMazeBuilding = false;
+                      
                         
                           
                     }
-                    //isSearching = false;
+                 
                                
                 }
             if(event.key.code == sf::Keyboard::R){
@@ -736,7 +733,7 @@ int main(){
                         }
                     }  
                     isDone = false;
-                    //isDoneMazeBuilding = false;
+                   
             }
             if(event.key.code == sf::Keyboard::M){
                 if(isDoneMazeBuilding == false){
@@ -760,23 +757,11 @@ int main(){
                       refreshGrid(grid, state);
                       isDone = false;
                       isDoneMazeBuilding = false;
-                      //isSearching = false;
+                      
                 }
         }
          window.display();
-        //cout<<state[0][1];
-     
-
-        //pPair mySet = g.getStartEnd(window,event,src,dest);
-
-        //src = mySet.first;
-        //dest = mySet.second;
-    //g.clickTest(event);
-       // g.drawGrid(window);
-       //g.tracePath(window, vec);
-       // g.testDraw(window, src, dest);
-        //window.draw(line, 2, sf::Lines);
-        //////window.draw(r);
+        
         
     }
   
@@ -784,6 +769,3 @@ int main(){
   return 0;
    
 }
-
-
-//to compile sfml on cmd - g++ MazePathFindermain.cpp -lsfml-graphics -lsfml-window -lsfml-system
