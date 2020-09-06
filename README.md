@@ -1,1 +1,1 @@
-# A-Maze-Path-Finder
+# A-Star-Maze-Path-Finder
