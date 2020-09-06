@@ -2,7 +2,7 @@
 
 This is an A* Search Algorithm Visualizer
 
-#Instructions On How To Use:
+# Instructions On How To Use:
 
 The A* Pathfinder works on a 50 X 50 grid with default start and destination nodes at (0,0) and (49,49) respectively.
 
