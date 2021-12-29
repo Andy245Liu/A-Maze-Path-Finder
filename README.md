@@ -1,8 +1,7 @@
 # A-Star-Maze-Path-Finder
 
 This is an A* Search Algorithm Visualizer
-![image](https://user-images.githubusercontent.com/69114450/147625277-588415a3-1e61-463c-a6e0-2eae2c7ff649.png)
-
+![image](https://user-images.githubusercontent.com/69114450/147625367-84cf572f-f0bd-4dae-ae4d-7a71d7e29e18.png)
 
 # Instructions On How To Use:
 
