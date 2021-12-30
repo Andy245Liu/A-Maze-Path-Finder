@@ -5,7 +5,7 @@ This is an A* Search Algorithm Visualizer
 
 # Instructions On How To Use:
 
-The A* Pathfinder works on a 50 X 50 grid with default start and destination nodes at (0,0) and (49,49) respectively.
+The A* Pathfinder works on a 50 X 50 grid with default start and destination nodes at (0,0) and (49,49) respectively. The length of a path is the number of moves (horizontally, vertically, or diagonally) needed to get from the start node to the destination node.
 
 1) To select a green start node, hover your mouse over a square node and hit the 'S' key.
 2) To select a red destination node, hover your mouse over a square node and hit the 'D' key.
