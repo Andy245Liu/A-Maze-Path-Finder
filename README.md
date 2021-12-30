@@ -2,7 +2,7 @@
 
 This is an A* Search Algorithm Visualizer
 
-<img src="Demo.gif" width="50%" height="50%"/>
+<img src="Demo.gif" width="30%" height="30%"/>
 
 
 # Instructions On How To Use:
