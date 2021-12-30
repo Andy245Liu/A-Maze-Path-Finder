@@ -1,7 +1,8 @@
 # A-Star-Maze-Path-Finder
 
 This is an A* Search Algorithm Visualizer
-<img src="Demo.gif" width="50%" height="50%"/>
+
+!<img src="Demo.gif" width="50%" height="50%"/>
 
 
 # Instructions On How To Use:
